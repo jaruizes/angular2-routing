@@ -89,7 +89,7 @@ The second step is preparing the component associated to this route to receive a
   }
 ```
 
-And the last one is passing a parameter called 'param1' to feature2. In order to do this, we have to modified the  ```gotofeature`` function in Feature1Component to add the param:
+And the last one is passing a parameter called 'param1' to feature2. In order to do this, we have to modified the  ```gotofeature``` function in Feature1Component to add the param:
 
 ```typescript
   gotofeature() {
