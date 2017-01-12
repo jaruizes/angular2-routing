@@ -1,3 +1,10 @@
 <h1>
   This is the Feature 1
 </h1>
+
+<div>
+  <label for="gotofeature">Go to feature number:</label>&nbsp;
+  <input type="text" id="gotofeature" [(ngModel)]="targetFeature"/>
+
+  <input type="button" value="gotofeature" (click)="gotofeature()" />
+</div>

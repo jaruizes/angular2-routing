@@ -9,7 +9,7 @@ import {HomeComponent} from "./home/home.component";
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'feature1', component: Feature1Component },
-  { path: 'feature2', component: Feature2Component },
+  { path: 'feature2/:param1', component: Feature2Component },
   { path: 'feature3', component: Feature3Component }
 ];
 
