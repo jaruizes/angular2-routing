@@ -22,6 +22,8 @@ export class Feature1Component {
     }
 
     let target:string = `/feature${this.targetFeature}`;
+
+    // The this.targetFeature value is going to be sent as navigation param
     this._router.navigate([target, this.targetFeature]);
   }
 }
