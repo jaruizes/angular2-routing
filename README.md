@@ -16,7 +16,7 @@ This links are based on "routerLink", "router-outlet" directive and routing conf
 
 To performance this navigation it's necessary to do this steps:
 
-* Configuring navigation routes
+* Configuring navigation routes.
   This is implemented in app.routing.ts file. 
   
 * Including routing providers in application.
@@ -24,12 +24,12 @@ To performance this navigation it's necessary to do this steps:
   
   > providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   
-* Including navigation links
+* Including navigation links.
   This is implemented in app.component.html
 
 
 ### Dynamic navigation
-In the real life, navigations aren't always performed by a link. In may cases, depends on the logic, a navigation is done an even it's necessary to pass some parameters to the target page.
+In the real life, navigation is not always performed by a link. In many cases, depends on the logic, a navigation is done programmatically an it's even necessary to pass some parameters to the target page.
 
 To do a navigation programmatically we have to use the function ```navigate()```of the Router object. In this example, we've added a new function in Feature1Component called ```gotofeature```that performs the navigation:
 
@@ -57,7 +57,7 @@ Then we've modified the template associated to this component (feature1.componen
 ```
 
 If we want to pass parameters to the target we have to do additional steps. 
-The first one is declaring what params is expecting for each route, so we have to modify the file app.routing.ts:
+The first one consist on declaring what params is expecting for each route, so we have to modify the file app.routing.ts:
 
 ```typescript
  const routes: Routes = [
@@ -89,7 +89,7 @@ The second step is preparing the component associated to this route to receive a
   }
 ```
 
-And the last one is passing a parameter called 'param1' to feature2. In order to do this, we have to modified the  ```gotofeature``` function in Feature1Component to add the param:
+And the last one consist on passing a parameter called 'param1' to feature2. In order to do this, we have to modified the  ```gotofeature``` function in Feature1Component to add the param:
 
 ```typescript
   gotofeature() {
