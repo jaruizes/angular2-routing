@@ -24,7 +24,15 @@ export class Feature1Component {
     let target:string = `/feature${this.targetFeature}`;
 
     // The this.targetFeature value is going to be sent as navigation param
-    this._router.navigate([target, this.targetFeature]);
+    let navigateArguments:any = [target];
+    if (this.targetFeature == 2) {
+      navigateArguments.push(this.targetFeature);
+    }
+    this._router.navigate(navigateArguments);
+  }
+
+  goDirectlyTo33() {
+    this._router.navigate(['/feature3/feature33/feature1']);
   }
 }
 
