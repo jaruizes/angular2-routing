@@ -28,7 +28,7 @@ To performance this navigation it's necessary to do this steps:
   This is implemented in app.component.html
 
 
-### Dynamic navigation
+### Dynamic navigation and parameters
 In the real life, navigation is not always performed by a link. In many cases, depends on the logic, a navigation is done programmatically an it's even necessary to pass some parameters to the target page.
 
 To do a navigation programmatically we have to use the function ```navigate()```of the Router object. In this example, we've added a new function in Feature1Component called ```gotofeature```that performs the navigation:
@@ -109,3 +109,47 @@ We can also send the param using a static link in this way:
 ```html
 <a [routerLink]="['/feature2','paramvalue']">Feature2</a>
 ```
+
+#### Static data
+It's possible to send a set of static data in a navigation. This data is specified at time of route configuration, so it's totally static:
+
+```typescript
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'feature1', component: Feature1Component },
+  { path: 'feature2/:param1', component: Feature2Component, data: [{appName: 'angular-routing', appVersion: '1.0.0'}]},
+  { path: 'feature3', component: Feature3Component }
+];
+```
+
+In this case, we've modified the app.routing.ts file to add static data to route "feature2". We've added the ```data``` property to send the application name and the application version to this route. 
+
+To get the data, we've modified the Feature2Component component adding two new attributes and reading the data property:
+
+```typescript
+export class Feature2Component {
+
+  showparam:boolean = false;
+  param1:string;
+  
+  // This is the static data
+  appName:string;
+  appVersion:string;
+
+  constructor(_route: ActivatedRoute) {
+    let param:string = _route.snapshot.params['param1'];
+    if (param) {
+      this.showparam = true;
+      this.param1 = param;
+    }
+
+    // Getting the static data
+    let staticData = _route.snapshot.data[0];
+    this.appName = staticData['appName'];
+    this.appVersion = staticData['appVersion'];
+  }
+}
+```
+
+
+
