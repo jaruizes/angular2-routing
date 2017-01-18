@@ -1,5 +1,8 @@
-<h1>This is the Feature 3</h1>
+<h2>This is the feature 3</h2>
+<nav>
+  <a [routerLink]="['./feature31']">Feature 3-1</a>
+  <a [routerLink]="['./feature32']">Feature 3-2</a>
+  <a [routerLink]="['./feature33', {outlets: {'primary-info': 'feature331', 'secondary-info': 'feature332'}}]">Feature3-3</a>
+</nav>
 
-<a [routerLink]="['./feature31']">Feature 3-1</a>
-<a [routerLink]="['./feature32']">Feature 3-2</a>
 <router-outlet></router-outlet>

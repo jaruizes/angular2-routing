@@ -1,7 +1,7 @@
 # angular2-routing
 Routing example in Angular2. 
 
-This is an example of how configuring the routing in Angular. The application has four pages:
+This is an example of how to configure the routing in Angular. The application has four pages:
 
 * Home
 * Feature 1
@@ -151,5 +151,6 @@ export class Feature2Component {
 }
 ```
 
-
-
+### Child Routes
+The next step is setting child views or sections inside a route. It's important to keep in mind that just one of them 
+will show at the same time. 
