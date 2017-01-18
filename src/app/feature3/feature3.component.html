@@ -2,7 +2,7 @@
 <nav>
   <a [routerLink]="['./feature31']">Feature 3-1</a>
   <a [routerLink]="['./feature32']">Feature 3-2</a>
-  <a [routerLink]="['./feature33', {outlets: {'primary-info': 'feature331', 'secondary-info': 'feature332'}}]">Feature3-3</a>
+  <a [routerLink]="['./feature33', 'originparam', {outlets: {'primary-info': 'feature331', 'secondary-info': 'feature332'}}]">Feature3-3</a>
 </nav>
 
 <router-outlet></router-outlet>

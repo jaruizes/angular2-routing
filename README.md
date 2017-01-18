@@ -1,12 +1,16 @@
 # angular2-routing
 Routing example in Angular2. 
 
-This is an example of how to configure the routing in Angular. The application has four pages:
+This is an example of how to configure the routing in Angular. We are going to build an application with this
+structure:
 
 * Home
 * Feature 1
 * Feature 2
 * Feature 3
+  * Feature 3-1
+  * Feature 3-2
+  * Feature 3-3
 
 
 ### Static Navigation

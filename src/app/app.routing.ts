@@ -20,7 +20,7 @@ const routes: Routes = [
     children: [
       { path: 'feature31', component: Feature31Component},
       { path: 'feature32', component: Feature32Component},
-      { path: 'feature33', component: Feature33Component,
+      { path: 'feature33/:origin', component: Feature33Component,
         children: [
           { path: 'feature331', component: Feature331Component, outlet: 'primary-info' },
           { path: 'feature332', component: Feature332Component, outlet: 'secondary-info' },
