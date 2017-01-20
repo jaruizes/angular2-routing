@@ -7,10 +7,12 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class Feature333Component {
 
-  origin:string;
+  id:string;
 
   constructor(_route: ActivatedRoute) {
-    this.origin = _route.snapshot.params['origin'];
+    _route.params.subscribe(params=> {
+      this.id = params["id"];
+    });
   }
 }
 

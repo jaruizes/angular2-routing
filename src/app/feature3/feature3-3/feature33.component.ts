@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {Component} from "@angular/core";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'feature33',
@@ -9,8 +9,8 @@ export class Feature33Component {
 
   origin:string;
 
-  constructor(_route: ActivatedRoute) {
-    this.origin = _route.snapshot.params['origin'];
+  constructor(private _route: ActivatedRoute, private _router: Router) {
+    this.origin = this._route.snapshot.params['origin'];
   }
 }
 

@@ -10,8 +10,6 @@ import {Feature331Component} from "./feature3/feature3-3/feature3-3-1/feature331
 import {Feature332Component} from "./feature3/feature3-3/feature3-3-2/feature332.component";
 import {Feature333Component} from "./feature3/feature3-3/feature3-3-3/feature333.component";
 
-
-
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'feature1', component: Feature1Component },
@@ -22,9 +20,9 @@ const routes: Routes = [
       { path: 'feature32', component: Feature32Component},
       { path: 'feature33/:origin', component: Feature33Component,
         children: [
-          { path: 'feature331', component: Feature331Component, outlet: 'primary-info' },
-          { path: 'feature332', component: Feature332Component, outlet: 'secondary-info' },
-          { path: 'feature333', component: Feature333Component, outlet: 'extra-info' }
+          { path: 'feature331/:id', component: Feature331Component, outlet: 'primary-info' },
+          { path: 'feature332/:id', component: Feature332Component, outlet: 'secondary-info' },
+          { path: 'feature333/:id', component: Feature333Component, outlet: 'extra-info' }
         ]
       }
     ]

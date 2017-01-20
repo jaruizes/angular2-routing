@@ -1,16 +1,23 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'feature331',
   templateUrl: './feature331.component.html'
 })
-export class Feature331Component {
+export class Feature331Component implements OnInit {
 
-  origin:string;
+  id:number;
+
+  ngOnInit() {
+    console.log('init!!!');
+  }
 
   constructor(_route: ActivatedRoute) {
-    this.origin = _route.snapshot.params['origin'];
+    _route.params.subscribe(params=> {
+      this.id = params["id"];
+    });
+    console.log('constructor!!!');
   }
 }
 

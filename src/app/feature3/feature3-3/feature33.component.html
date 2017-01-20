@@ -1,7 +1,6 @@
 <h2>
-  This is the Feature 3-3 (origin: {{origin}})
+  This is the detail (origin: {{origin}})
 </h2>
-<a [routerLink]="['./', {outlets: {'extra-info': 'feature333'}}]">Show extra info</a>
 
 <div style="color: green; margin-top: 1rem;">Primary Info</div>
 <div style="border: 2px solid green; padding: 1rem;">
@@ -12,7 +11,5 @@
 <div style="border: 2px solid blue; padding: 1rem;">
   <router-outlet name="secondary-info"></router-outlet>
 </div>
-<div style="color: green; margin-top: 1rem;">Extra Info:</div>
-<div style="border: 2px solid red; padding: 1rem;">
-  <router-outlet name="extra-info"></router-outlet>
-</div>
+<router-outlet name="extra-info"></router-outlet>
+

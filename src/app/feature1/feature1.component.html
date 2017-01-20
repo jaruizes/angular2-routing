@@ -1,13 +1,12 @@
-<h1>
-  This is the Feature 1
-</h1>
+<h1>This is the Feature 1</h1>
 
 <div>
-  <label for="gotofeature">Go to feature number:</label>&nbsp;
-  <input type="text" id="gotofeature" [(ngModel)]="targetFeature"/>
-
+  <label>Go to:</label>
+  <select [(ngModel)]="targetFeature">
+    <option [value]="2" selected>Feature 2</option>
+    <option [value]="3">Feature 3</option>
+  </select>
   <input type="button" value="Go to Feature" (click)="gotofeature()" />
-
 </div>
 
 <br>
