@@ -5,17 +5,30 @@
 </nav>
 
 <br>
-<p>Item list</p>
-<ul>
-  <li><a
-    [routerLink]="['./feature33', 'feature3', {outlets: {'primary-info': ['feature331',1], 'secondary-info': ['feature332',1], 'extra-info': null}}]">Get detail (1)</a>
-  </li>
-  <li><a
-    [routerLink]="['./feature33', 'feature3', {outlets: {'primary-info': ['feature331',2], 'secondary-info': ['feature332',2], 'extra-info': null}}]">Get detail (2)</a>
-  </li>
-  <li><a
-    [routerLink]="['./feature33', 'feature3', {outlets: {'primary-info': ['feature331',3], 'secondary-info': ['feature332',3], 'extra-info':['feature333',3]}}]">Get detail (3)</a>
-  </li>
-</ul>
+<table>
+  <tr>
+    <td style="width: 50%;vertical-align: top;padding: 20px;border: solid 0.1em black" >
+      <p>Item list</p>
+      <ul>
+        <li><a
+          [routerLink]="['./feature33', 'feature3', {outlets: {'primary-info': ['feature331',1], 'secondary-info': ['feature332',1], 'extra-info': null}}]">Get
+          detail (1)</a>
+        </li>
+        <li><a
+          [routerLink]="['./feature33', 'feature3', {outlets: {'primary-info': ['feature331',2], 'secondary-info': ['feature332',2], 'extra-info': null}}]">Get
+          detail (2)</a>
+        </li>
+        <li><a
+          [routerLink]="['./feature33', 'feature3', {outlets: {'primary-info': ['feature331',3], 'secondary-info': ['feature332',3], 'extra-info':['feature333',3]}}]">Get
+          detail (3)</a>
+        </li>
+      </ul>
+    </td>
+    <td style="padding: 20px;">&nbsp;
+      <router-outlet></router-outlet>
+    </td>
+  </tr>
+</table>
 
-<router-outlet></router-outlet>
+
+
