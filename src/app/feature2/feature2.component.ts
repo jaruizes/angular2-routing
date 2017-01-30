@@ -24,8 +24,10 @@ export class Feature2Component {
 
     // Getting the static data
     let staticData = _route.snapshot.data[0];
-    this.appName = staticData['appName'];
-    this.appVersion = staticData['appVersion'];
+    if (staticData) {
+      this.appName = staticData['appName'];
+      this.appVersion = staticData['appVersion'];
+    }
   }
 }
 

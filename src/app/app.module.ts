@@ -1,21 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from "@angular/platform-browser";
+import {NgModule} from "@angular/core";
+import {AppComponent} from "./app.component";
 
-import { AppComponent } from './app.component';
-import { routing } from './app.routing';
+import { FormsModule } from '@angular/forms';
+
+import {routing} from "./app.routing";
+import {LocationStrategy, HashLocationStrategy} from "@angular/common";
+
 import {Feature3Component} from "./feature3/feature3.component";
 import {Feature2Component} from "./feature2/feature2.component";
 import {Feature1Component} from "./feature1/feature1.component";
-import {LocationStrategy, HashLocationStrategy} from "@angular/common";
 import {HomeComponent} from "./home/home.component";
 import {Feature33Component} from "./feature3/feature3-3/feature33.component";
 import {Feature32Component} from "./feature3/feature3-2/feature32.component";
 import {Feature31Component} from "./feature3/feature3-1/feature31.component";
-import {Feature331Component} from "./feature3/feature3-3/feature3-3-1/feature331.component";
-import {Feature332Component} from "./feature3/feature3-3/feature3-3-2/feature332.component";
-import {Feature333Component} from "./feature3/feature3-3/feature3-3-3/feature333.component";
 
 @NgModule({
   declarations: [
@@ -26,18 +24,15 @@ import {Feature333Component} from "./feature3/feature3-3/feature3-3-3/feature333
     Feature3Component,
     Feature31Component,
     Feature32Component,
-    Feature33Component,
-    Feature331Component,
-    Feature332Component,
-    Feature333Component
+    Feature33Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
     routing
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
