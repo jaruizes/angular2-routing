@@ -1,7 +1,7 @@
 <nav style="border: 2px solid black; padding: 1rem; background-color: lightgrey">
   <a [routerLink]="['/']">Home</a>
   <a [routerLink]="['/feature1']">Feature1</a>
-  <a [routerLink]="['/feature2']">Feature2</a>
+  <a [routerLink]="['/feature2','value1']" [queryParams]="{qParamRLink: 'test'}">Feature2</a>
   <a [routerLink]="['/feature3']">Feature3</a>
 </nav>
 <h1>{{title}}</h1>

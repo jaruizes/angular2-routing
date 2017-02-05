@@ -8,26 +8,34 @@ import {ActivatedRoute} from "@angular/router";
 
 export class Feature2Component {
 
-  showparam:boolean = false;
-  param1:string;
+  showparam: boolean = false;
+  param1: string;
+  queryParams: string;
 
   // This is the static data
-  appName:string;
-  appVersion:string;
+  appName: string;
+  appVersion: string;
 
-  constructor(_route: ActivatedRoute) {
-    let param:string = _route.snapshot.params['param1'];
-    if (param) {
-      this.showparam = true;
-      this.param1 = param;
-    }
+  constructor(private _route: ActivatedRoute) {
+    // Getting the route params
+    this._route.params.subscribe(params => {
+      if (params['param1']) {
+        this.param1 = params['param1'];
+        this.showparam = true;
+      }
+    });
 
     // Getting the static data
-    let staticData = _route.snapshot.data[0];
+    let staticData = this._route.snapshot.data[0];
     if (staticData) {
       this.appName = staticData['appName'];
       this.appVersion = staticData['appVersion'];
     }
+
+    // Getting query params
+    this._route.queryParams.subscribe(params => {
+      this.queryParams = JSON.stringify(params);
+    });
   }
 }
 

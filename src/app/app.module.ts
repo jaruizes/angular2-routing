@@ -14,6 +14,7 @@ import {HomeComponent} from "./home/home.component";
 import {Feature33Component} from "./feature3/feature3-3/feature33.component";
 import {Feature32Component} from "./feature3/feature3-2/feature32.component";
 import {Feature31Component} from "./feature3/feature3-1/feature31.component";
+import {PageNotFoundComponent} from "./pagenotfound/pagenotfound.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {Feature31Component} from "./feature3/feature3-1/feature31.component";
     Feature3Component,
     Feature31Component,
     Feature32Component,
-    Feature33Component
+    Feature33Component,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Router} from "@angular/router";
+import {Router, NavigationExtras} from "@angular/router";
 
 @Component({
   selector: 'feature1',
@@ -12,12 +12,18 @@ export class Feature1Component {
   constructor(private _router: Router){}
 
   /**
-   * This function navigates to a target feature using navigate() without
-   * sending any params
+   * This function navigates to a target feature using navigate()
    */
   gotofeature() {
     let target:string = `/feature${this.targetFeature}`;
-    this._router.navigate([target]);
+    let navigationExtras:NavigationExtras = {
+      queryParams: {
+        qParam1: 1,
+        test2: 'test'
+      }
+    };
+
+    this._router.navigate([target], navigationExtras);
   }
 
   goDirectlyTo33() {
