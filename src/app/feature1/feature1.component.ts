@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Router, NavigationExtras} from "@angular/router";
+import {LoginService} from "../services/login.service";
 
 @Component({
   selector: 'feature1',
@@ -9,7 +10,7 @@ export class Feature1Component {
 
   targetFeature:number = 0;
 
-  constructor(private _router: Router){}
+  constructor(private _router: Router, private loginService:LoginService){}
 
   /**
    * This function navigates to a target feature using navigate()
@@ -28,6 +29,14 @@ export class Feature1Component {
 
   goDirectlyTo33() {
     this._router.navigate(['/feature3/feature33','feature1']);
+  }
+
+  goToSecretFeature(user, password) {
+    if (this.loginService.login(user,password)) {
+      this._router.navigate(['/feature4']);
+    } else {
+      window.alert('Try again!');
+    }
   }
 }
 

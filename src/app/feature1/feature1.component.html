@@ -11,3 +11,20 @@
 
 <br>
 <input type="button" value="Go directly to Feature 3-3" (click)="goDirectlyTo33()" />
+
+<br>
+<br>
+<div style="font-weight: bold; border: solid 1px black; width: 40%">
+  <div style="padding: 0.4rem">
+    <label>User:</label>
+    <input type="text" #user>
+  </div>
+  <div style="padding: 0.4rem">
+    <label>Password:</label>
+    <input type="password" #password>
+  </div>
+  <br>
+  <div style="padding: 0.4rem">
+    <input type="button" value="Try!" (click)="goToSecretFeature(user.value, password.value)" />
+  </div>
+</div>
