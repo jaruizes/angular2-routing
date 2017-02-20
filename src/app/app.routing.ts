@@ -10,6 +10,9 @@ import {PageNotFoundComponent} from "./pagenotfound/pagenotfound.component";
 import {Feature4Component} from "./feature4/feature4.component";
 import {HasPrivateAccessGuard} from "./guards/has-private-access.guard";
 import {ConfirmExitPrivateZoneGuard} from "./guards/confirm-exit-private-zone.guard";
+import {Feature41Component} from "./feature4/feature4-1/feature41.component";
+import {Feature42Component} from "./feature4/feature4-2/feature42.component";
+import {Feature43Component} from "./feature4/feature4-3/feature43.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: {appName: 'Angular Routing', appVersion: '1.0.0'}},
@@ -23,7 +26,22 @@ const routes: Routes = [
       { path: 'feature33/:origin', component: Feature33Component}
     ]
   },
-  { path: 'feature4', component: Feature4Component, canActivate: [HasPrivateAccessGuard], canDeactivate: [ConfirmExitPrivateZoneGuard]},
+  { path: 'feature4', component: Feature4Component, canActivate: [HasPrivateAccessGuard], canDeactivate: [ConfirmExitPrivateZoneGuard],
+    children: [
+      {path: 'rol1', canActivateChild: [HasPrivateAccessGuard],
+        children: [
+          {path: 'feature41', component: Feature41Component},
+          {path: 'feature42', component: Feature42Component}
+        ]
+      },
+      {path: 'rol2'
+        ,
+        children: [
+          {path: 'feature43', component: Feature43Component}
+        ]
+      }
+    ]
+  },
   { path: '**', component: PageNotFoundComponent}
 ];
 

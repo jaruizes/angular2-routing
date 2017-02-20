@@ -16,6 +16,9 @@ import {Feature4Component} from "./feature4/feature4.component";
 import {HasPrivateAccessGuard} from "./guards/has-private-access.guard";
 import {ConfirmExitPrivateZoneGuard} from "./guards/confirm-exit-private-zone.guard";
 import {LoginService} from "./services/login.service";
+import {Feature42Component} from "./feature4/feature4-2/feature42.component";
+import {Feature41Component} from "./feature4/feature4-1/feature41.component";
+import {Feature43Component} from "./feature4/feature4-3/feature43.component";
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import {LoginService} from "./services/login.service";
     Feature32Component,
     Feature33Component,
     Feature4Component,
+    Feature41Component,
+    Feature42Component,
+    Feature43Component,
     PageNotFoundComponent
   ],
   imports: [
